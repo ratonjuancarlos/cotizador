@@ -1,0 +1,38 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Cotizador</h1>
+
+      <label class="dolar">
+        US$<input type="number" min="0" id="dolar" placeholder="Valor dolar" value="{{dolar}}" />
+      </label>
+
+
+    </header>
+
+    <ul>
+      {{#each tasks}}
+      {{> task}}
+      {{/each}}
+    </ul>
+
+    <form class="new-task">
+      <input type="text" required name="text" placeholder="Nuevo concepto" />
+      <input type="number" required name="valor" placeholder="Valor" />
+      <button type="submit">Grabar</button>
+    </form>
+    <h1 class="total">Total: ${{total}}</h1>
+    <ul>
+      {{#each tareas}}
+      {{> tarea}}
+      {{/each}}
+    </ul>
+    <br>
+    <button id="limpiar">Limpiar</button>
+  </div>
+</body>
+
+
+<template name="tarea">
+  <li>{{text.text.text}}</li>
+</template>
